@@ -19,7 +19,7 @@ You can then define differnt keys, and different instances of interest for each 
 
 ## Install:
 
-copy the files to the same location, 
+copy the files to the same location (aka <install_dir>)
 
 
 ## Setup:
