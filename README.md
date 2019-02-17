@@ -17,6 +17,8 @@ You can then define differnt keys, and different instances of interest for each 
 **autoload** - you can also load a configuration automatically according to content if environment variable ```AWS_DEFAULT_PROFILE``` is set. This behavior is defined by the ```_aws_profile_auto_load``` dictionaty in e2c2config.py
 
 
+It is recommended to go over e2c2config.py to check whats really going on.
+
 ## Install:
 
 copy the files to the same location (aka <install_dir>)
