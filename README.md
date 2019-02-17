@@ -12,9 +12,9 @@ If you want to see all your instances and not only those of interest you can use
 
 
 It also possible to define **mutiple configurations**, usually associated with multiple aws accounts.
-You can then define differnt keys, and different instances of interest for each aws account.
+You can then define different keys, and different instances of interest for each aws account.
 
-**autoload** - you can also load a configuration automatically according to content if environment variable ```AWS_DEFAULT_PROFILE``` is set. This behavior is defined by the ```_aws_profile_auto_load``` dictionaty in e2c2config.py
+**autoload** - you can also load a configuration automatically according to content if environment variable ```AWS_DEFAULT_PROFILE``` is set. This behavior is defined by the ```_aws_profile_auto_load``` dictionary in e2c2config.py
 
 
 It is recommended to go over e2c2config.py to check whats really going on.
@@ -48,7 +48,7 @@ _default_config = {
 ```
 
 
-###Run
+### Run
 ```
 $ cd <install_dir>
 $ ./e2c2.py
