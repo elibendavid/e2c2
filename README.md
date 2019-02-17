@@ -19,9 +19,7 @@ You can then define differnt keys, and different instances of interest for each 
 
 ## Install:
 
-```
-pip install e2c2
-```
+copy the files to the same location, 
 
 
 ## Setup:
@@ -46,6 +44,16 @@ _default_config = {
     },
 }
 ```
+
+
+###Run
+```
+$ cd <install_dir>
+$ ./e2c2.py
+```
+
+
+
 
 ## Commands:
 
