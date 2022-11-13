@@ -14,22 +14,27 @@ _colors = {
     "help_color": 'white',
 }
 
-
 # this is the default configuration
 # replace YOUR_SSH_KEY and YOUR_SSH_USER with real life values
 # e.g. {"key":"mykeyfile.pem" , "user":"ubuntu"}
 _default_config = {
     "ssh_path": "~/.ssh",
     "default_key": {
-        "key": "YOUR_SSH_KEY",  # replace this
-        "user": "YOUR_SSH_USER" # replace this
+        "key": "qa-rnd.pem",  # replace this
+        "user": "ec2-user"  # replace this
     },
+    "instances": {
+        "i-039e919230d2c75a2": {
+            "key": "qa-rnd.pem",
+            "user": "ubuntu",
+        },
+    }
 }
 
 #
 # Sample Configuration
 #
-sample_config1 =  {
+sample_config1 = {
     # *mandatory*
     #
     # define a path for your ssh keys
@@ -42,12 +47,11 @@ sample_config1 =  {
         "user": "YOUR_SSH_USER"  # replace this
     },
 
-
     # this defines instances of interest, these will show when doing 'list', or 'list running' ( as opposed to 'list all', 'list all-running' that will show all instances, and not just those of interest)
-    "instances" : {
-        "YOUR_INSTANCE_ID1" : {
+    "instances": {
+        "YOUR_INSTANCE_ID1": {
             # this key will be used when connecting this instance
-            "key" : "YOUR_INSTANCE_SPECIFIC_SSH_KEY1",
+            "key": "YOUR_INSTANCE_SPECIFIC_SSH_KEY1",
             "user": "YOUR_INSTANCE_SPECIFIC_SSH_USER1",
         },
         "YOUR_INSTANCE_ID2": {
@@ -63,7 +67,6 @@ sample_config1 =  {
 
 }
 
-
 #
 # OPTIONAL :
 #
@@ -75,7 +78,7 @@ sample_config1 =  {
 # }
 
 
-_aws_profile_auto_load  = {}
+_aws_profile_auto_load = {}
 _active_configuration = {}
 
 
