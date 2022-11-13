@@ -133,6 +133,30 @@ class ec2_controller(cmd.Cmd):
             return False
         return True
 
+    def do_terminate(self, menu_index):
+        """
+        Usage :
+
+        stop  <#> -  terminate an instance
+
+        e.g. stop 0
+        """
+        if not self.valid_menu_index(menu_index):
+            self.do_help("terminate")
+            return
+
+        current_state = self.menu[int(menu_index)]['state']
+
+        # if current_state != colored("RUNNING", _colors["running_color"]):
+        #     self.print_error("machine is not running, start it first [ state = |%s| ] " % current_state)
+        #     return
+
+        print("terminating menu item %s" % menu_index)
+        entry = self.get_entry(menu_index)
+        instance = self.ec2.Instance(entry['id'])
+        result = instance.terminate()
+        print("HTTP %s" % result['ResponseMetadata']['HTTPStatusCode'])
+
     def do_stop(self, menu_index):
         """
         Usage :
@@ -184,6 +208,11 @@ class ec2_controller(cmd.Cmd):
     def help_config(self):
         print("")
         print(colored("config - dump e2c2 configuration", _colors['help_color']))
+        print("")
+
+    def help_terminate(self):
+        print("")
+        print(colored("terminate <#> - terminate an instance ", _colors['help_color']))
         print("")
 
     def help_ssh(self):
